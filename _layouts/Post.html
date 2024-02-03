@@ -52,6 +52,15 @@
 
     <title>{{page.title}} - {{site.heading}}</title>
     <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
     <link rel="canonical" href="{{site.url}}{{page.url}}" />
     <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/img/profile.png">
     <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.png" type="image/png" sizes="16x16" />
@@ -138,7 +147,7 @@
                     {% for post in site.posts %}
                         <div class="list-feed"> 
                         <a href="{{ site.baseurl }}{{post.url}}" style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
-                            <div class="writinglist-title">{{post.title }}</div>
+                            <div class="writinglist-title">{{ post.date | date_to_long_string }}: {{post.title}}</div>
                         </a>
                         </div>
                     {%- endfor -%}
