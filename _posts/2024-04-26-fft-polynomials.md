@@ -311,7 +311,7 @@ plt.show()
 And we get the following times. As you can see, for low-degree polynomials it may not make sense to use the FFT approach, since the FFT/IFFT back-and-forth conversions take more time than the naive approach.
 However, as the degree increases, we can observe how the FFT approach is way more efficient.
 
-![fft2](https://github.com/alrevuelta/myblog/blob/main/assets/img/fft_vs_naive.png)
+![timefreq](https://github.com/alrevuelta/myblog/blob/main/assets/img/time_freq.png)
 
 
 ## Summary
