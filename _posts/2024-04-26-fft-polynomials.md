@@ -200,7 +200,7 @@ In the frequency domain, it looks like a delta, exactly at the frequency 5.
 This means that the signal on the left side (time domain) can be expressed as one sinus with frequency 5.
 Different ways of referring to the same signal.
 
-![timefreq](https://github.com/alrevuelta/myblog/blob/main/assets/img/time_freq.png)
+<center><img src="https://github.com/alrevuelta/myblog/blob/main/assets/img/time_freq.png?raw=true" style="width:70%"></center>
 
 Before continuing, let's clarify the concepts. They all refer to the same thing but have some minor differences:
 * Fourier Transform (FT): Fourier Transform defined in continuous domain.
@@ -308,10 +308,10 @@ plt.legend()
 plt.show()
 ```
 
-<center><img src="https://github.com/alrevuelta/myblog/blob/main/assets/img/fft_vs_naive.png?raw=true" style="width:70%"></center>
-
 And we get the following times. As you can see, for low-degree polynomials it may not make sense to use the FFT approach, since the FFT/IFFT back-and-forth conversions take more time than the naive approach.
 However, as the degree increases, we can observe how the FFT approach is way more efficient.
+
+<center><img src="https://github.com/alrevuelta/myblog/blob/main/assets/img/fft_vs_naive.png?raw=true" style="width:70%"></center>
 
 
 ## Summary
