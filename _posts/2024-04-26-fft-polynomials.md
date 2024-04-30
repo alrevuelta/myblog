@@ -86,7 +86,7 @@ $$
 {2}\times{5} = 10
 $$
 
-Then we move the flipped version of `q` one element to the left.
+Then we move the flipped version of `q` one element to the right.
 
 $$
 \begin{matrix}
