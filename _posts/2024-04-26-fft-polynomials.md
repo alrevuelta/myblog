@@ -296,7 +296,7 @@ def multiply_convolve(p, q):
     return np.convolve(p, q, mode="full")
 ```
 
-However, these polynomials have a low degree. Let's try to multiply polynomials up to degree 500 and see the time it takes using each method.
+However, these polynomials have a low degree. Let's try to multiply polynomials up to degree 30000 and see the time it takes using each method.
 We can do so with the following snippet:
 
 ```python
