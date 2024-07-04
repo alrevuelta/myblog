@@ -55,7 +55,7 @@ More specifically, the complexity is $O(n^2)$ which is not good. Can we do it be
 
 ## Convolutions
 
-Before answering the question if we can do better than $O(n^2)$ to multiply polynomials, let's introduce the concept of convolution, since it will come in handy to understand what’s next.
+Before answering the question if we can do better than $O(n^2)$ to multiply polynomials, let's introduce the concept of convolution since it will come in handy to understand what’s next.
 
 Convolution is defined both in continuous and discrete domains. The continuous domain might be cool for mathematicians, but we engineers who do real things prefer the discrete domain.
 We can define the convolution in the discrete domain of two discrete signals $p$ and $q$ as:
@@ -214,7 +214,7 @@ X[k] = \sum_{n=0}^{N-1} x[n] \cdot e^{-i 2\pi k n / N}
 $$
 
 It takes a discrete signal in time domain $x[n]$ and converts it to the frequency domain $X[k]$.
-Note that what it does is quite simple. Each sample of $X[k] is calculated by taking each sample of $x$ and multiplying it with a complex number, that represents a given frequency.
+Note that what it does is quite simple. Each sample of $X[k]$ is calculated by taking each sample of $x$ and multiplying it with a complex number, that represents a given frequency.
 
 It's some kind of projection, where each element of the input signal is projected into sines, and then added up together. 
 But let's go back to the main goal of this post. We wanted to multiply polynomials faster.
@@ -264,7 +264,7 @@ And `multiply_fft` which uses the FFT/IFFT and does a multiplication in the freq
 def multiply_fft(p, q):
     length = 2 ** np.ceil(np.log2(len(p) + len(q) - 1)).astype(int)
     f_padded = np.pad(p, (0, length - len(p)))
-    g_padded = np.pad(p2, (0, length - len(q)))
+    g_padded = np.pad(q, (0, length - len(q)))
 
     # Calculate FFT and multiply
     Y = np.fft.fft(f_padded) * np.fft.fft(g_padded)
@@ -286,21 +286,33 @@ print(multiply_naive(p, q))
 # [10, 27, 52, 45, 28]
 ```
 
+Now let's benchmark both ways, measuring the time it takes to multiply two polynomials of different degrees.
+But to make sure we compare apples to apples let's use the following `multiply_convolve` function instead of `multiply_naive`.
+They do the same operation, but `multiply_convolve` uses `numpy` function `convolve`, which does the multiplication using low-level C code, which is faster.
+Since in `multiply_fft` we are using `np.fft.fft` it wouldn't be fair to compare directly `multiply_naive` because it contains slow Python code, that should be left out of the equation.
+
+```python
+def multiply_convolve(p, q):
+    return np.convolve(p, q, mode="full")
+```
+
 However, these polynomials have a low degree. Let's try to multiply polynomials up to degree 500 and see the time it takes using each method.
 We can do so with the following snippet:
 
 ```python
-n_runs = 10
-tiempos_naive, tiempos_fft = [], []
-for grado in range(1, 500, 10):
-    p = [random.randint(1, 100) for i in range(grado)]
-    q = [random.randint(1, 100) for i in range(grado)]
+n_runs = 5
+tiempos_naive, tiempos_fft, tiempos_conv = [], [], []
+degrees = []
+for degree in range(1, 30000, 1000):
+    p = [random.randint(1, 999999) for i in range(degree)]
+    q = [random.randint(1, 999999) for i in range(degree)]
+    degrees.append(degree)
 
-    tiempos_naive.append(timeit.timeit('multiply_naive(p, q)', number=n_runs, globals=globals())/n_runs)
     tiempos_fft.append(timeit.timeit('multiply_fft(p, q)', number=n_runs, globals=globals())/n_runs)
+    tiempos_conv.append(timeit.timeit('multiply_convolve(p, q)', number=n_runs, globals=globals()) / n_runs)
 
-plt.plot(tiempos_naive, 'bo', label="naive")
-plt.plot(tiempos_fft, 'ro', label="fft")
+plt.plot(degrees, tiempos_fft,  'ro', label="fft")
+plt.plot(degrees, tiempos_conv, 'go', label="convolve")
 plt.title("Polynomial Multiplication: naive vs fft")
 plt.ylabel("Time (s)")
 plt.xlabel("Polynomial Degree")
