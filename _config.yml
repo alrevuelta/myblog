@@ -78,7 +78,6 @@ kramdown:
   math_engine: katex
   smart_quotes: ["apos", "apos", "quot", "quot"]
   syntax_highlighter: rouge
-  parse_block_html: true
   
 sass:
   style: compressed

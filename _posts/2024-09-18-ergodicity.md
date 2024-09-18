@@ -32,20 +32,10 @@ $$
 
 We can the term on the left the **time average**. This is a single person flipping the coin multiple times. The one on the right is the **ensemble average**, which is multiple people flipping a coin once.
 
-<details>
-  <summary>▶️ Python code:</summary>
-  {% raw %}
-  ```python
-  def fun():
-      pass
-  ```
-  {% endraw %}
-</details>
-
 Let’s model the coin flip with Python, using a Bernoulli process, where the odds of success are always `0.5`.
 
 <details>
-  <summary>▶️ Python code:</summary>
+  <summary></summary>
   ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -97,7 +87,7 @@ The problem is that we have calculated the expected wealth for the so-called ens
 This stochastic process is not ergodic, since the ensemble doesn’t match individual wealth paths. Let’s model this with Python and check that.
 
 <details>
-  <summary>Python code:</summary>
+  <summary></summary>
   
 ```python
 import matplotlib.pyplot as plt

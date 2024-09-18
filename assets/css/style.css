@@ -403,10 +403,13 @@ blockquote {
     padding: 10px;
 }
 
-summary {
-    display: flex;
-    align-items: center;
-    outline: none;
+summary::before {
+    content: "▶️ Code:";
+    cursor: pointer;
+}
+
+details {
+    margin-bottom: 25px;
 }
 
 cite {
