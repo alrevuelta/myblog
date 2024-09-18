@@ -35,39 +35,37 @@ We can the term on the left the **time average**. This is a single person flippi
 Let’s model the coin flip with Python, using a Bernoulli process, where the odds of success are always `0.5`.
 
 <details>
-  <summary>Python code:</summary>
-  {% raw %}
-  ```python
-  import numpy as np
-  import matplotlib.pyplot as plt
-  
-  def coin_flip():
-      return np.random.choice(['H', 'T'])
-  
-  def avg(flips):
-      return flips.count('H') / len(flips)
-  
-  n_flips = 10000
-  n_coins = 10000
-  single_sequence_flips = [coin_flip() for _ in range(n_flips)]
-  all_sequences_flips = [coin_flip() for _ in range(n_coins)]
-  
-  time_avg = [avg(single_sequence_flips[:i + 1]) for i in range(n_flips)]
-  ensemble_avg = avg(all_sequences_flips)
-  
-  def plot_averages(time_averages, ensemble_average, n_flips):
-      plt.figure(figsize=(6, 5))
-      plt.plot(range(n_flips), time_averages, label='Time Average')
-      plt.axhline(y=ensemble_average, color='r', linestyle='-', label='Ensemble Average')
-      plt.xlabel('Number of Flips')
-      plt.ylabel('Proportion of Heads')
-      plt.title('The Ergodic Coin Flip')
-      plt.legend()
-      plt.show()
-  
-  plot_averages(time_avg, ensemble_avg, n_flips)
-  ```
-  {% endraw %}
+  <summary>▶️ Python code:</summary>
+  <pre><code class="language-python">
+import numpy as np
+import matplotlib.pyplot as plt
+
+def coin_flip():
+    return np.random.choice(['H', 'T'])
+
+def avg(flips):
+    return flips.count('H') / len(flips)
+
+n_flips = 10000
+n_coins = 10000
+single_sequence_flips = [coin_flip() for _ in range(n_flips)]
+all_sequences_flips = [coin_flip() for _ in range(n_coins)]
+
+time_avg = [avg(single_sequence_flips[:i + 1]) for i in range(n_flips)]
+ensemble_avg = avg(all_sequences_flips)
+
+def plot_averages(time_averages, ensemble_average, n_flips):
+    plt.figure(figsize=(6, 5))
+    plt.plot(range(n_flips), time_averages, label='Time Average')
+    plt.axhline(y=ensemble_average, color='r', linestyle='-', label='Ensemble Average')
+    plt.xlabel('Number of Flips')
+    plt.ylabel('Proportion of Heads')
+    plt.title('The Ergodic Coin Flip')
+    plt.legend()
+    plt.show()
+
+plot_averages(time_avg, ensemble_avg, n_flips)
+  </code></pre>
 </details>
 
 With 10.000 trials we observe that both time average of a single person flipping the coin and the ensemble average of multiple people flipping a coin once match. We say it is ergodic.
