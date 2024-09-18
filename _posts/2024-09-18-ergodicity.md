@@ -36,7 +36,7 @@ Let’s model the coin flip with Python, using a Bernoulli process, where the od
 
 <details>
   <summary>Python code:</summary>
-    
+  {% raw %}
   ```python
   import numpy as np
   import matplotlib.pyplot as plt
@@ -67,6 +67,7 @@ Let’s model the coin flip with Python, using a Bernoulli process, where the od
   
   plot_averages(time_avg, ensemble_avg, n_flips)
   ```
+  {% endraw %}
 </details>
 
 With 10.000 trials we observe that both time average of a single person flipping the coin and the ensemble average of multiple people flipping a coin once match. We say it is ergodic.
