@@ -32,6 +32,14 @@ $$
 
 We can the term on the left the **time average**. This is a single person flipping the coin multiple times. The one on the right is the **ensemble average**, which is multiple people flipping a coin once.
 
+<details>
+  <summary>▶️ Python code:</summary>
+  ```python
+  def fun():
+      pass
+  ```
+</details>
+
 Let’s model the coin flip with Python, using a Bernoulli process, where the odds of success are always `0.5`.
 
 <details>
