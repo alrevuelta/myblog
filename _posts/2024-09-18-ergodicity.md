@@ -30,6 +30,14 @@ $$
 \frac{1}{n} \sum_{i=1}^{n} f(t_i) = \frac{1}{n} \sum_{i=1}^{n} f_i
 $$
 
+<details>
+  <summary>Python code:</summary>
+
+  ```python
+  def somefun():
+      pass
+  ```
+
 We can the term on the left the **time average**. This is a single person flipping the coin multiple times. The one on the right is the **ensemble average**, which is multiple people flipping a coin once.
 
 Let’s model the coin flip with Python, using a Bernoulli process, where the odds of success are always `0.5`.
