@@ -34,10 +34,12 @@ We can the term on the left the **time average**. This is a single person flippi
 
 <details>
   <summary>▶️ Python code:</summary>
+  {% raw %}
   ```python
   def fun():
       pass
   ```
+  {% endraw %}
 </details>
 
 Let’s model the coin flip with Python, using a Bernoulli process, where the odds of success are always `0.5`.
