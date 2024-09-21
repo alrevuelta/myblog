@@ -14,7 +14,7 @@ The problem. Most people apply statistics wrongly in their decision making proce
 - The Non-Ergodic Bet
 - The Non-Stationary Cookie Baking
 
-All real-life use cases that can be modeled as stochastic processes, are never ergodic not stationary. Yet people keep applying statistics as it were.
+All real-life use cases that can be modeled as stochastic processes are never ergodic nor stationary. Yet people keep applying statistics as if they were.
 
 Here you will learn what happens if you do so, and how to identify such situations.
 
@@ -23,6 +23,7 @@ Here you will learn what happens if you do so, and how to identify such situatio
 Ergodicity is a well-known concept in statistics. It’s a property of stochastic processes. If you observe a single system over a long period and give the same statistical properties as observing many systems at a single point in time, we say that it is ergodic.
 
 A coin flip of an unbiased coin is an ergodic process. If 10000 people flip a coin once or 1 person flips a coin 10000 times, both stochastic processes will have the same properties. For example, the expected value of heads and tails will be 50:50.
+Since it is ergodic, you as an individual will get 50:50 heads/tails if we consider enough flips.
 
 A fancy way of saying that one coin flip over `n` trials is the same a flipping `n` coins once can be expressed as follows:
 
@@ -30,7 +31,7 @@ $$
 \frac{1}{n} \sum_{i=1}^{n} f(t_i) = \frac{1}{n} \sum_{i=1}^{n} f_i
 $$
 
-We can the term on the left the **time average**. This is a single person flipping the coin multiple times. The one on the right is the **ensemble average**, which is multiple people flipping a coin once.
+We call the term on the left the **time average**. This is a single person flipping the coin multiple times. The one on the right is the **ensemble average**, which is multiple people flipping a coin once.
 
 Let’s model the coin flip with Python, using a Bernoulli process, where the odds of success are always `0.5`.
 
@@ -69,10 +70,11 @@ plot_averages(time_avg, ensemble_avg, n_flips)
 </details>
 
 With 10.000 trials we observe that both time average of a single person flipping the coin and the ensemble average of multiple people flipping a coin once match. We say it is ergodic.
+It is important to note that with just a few flips, you may not get 50:50 heads/tais. But statistics guarantee you that the more flips you do, the closer you will get to that.
 
 <center><img src="https://github.com/alrevuelta/myblog/blob/main/assets/img/coin.png?raw=true" style="width:70%"></center>
 
-The bad news. Nothing in real life is ergodic. Not even a coin flip. All coins are slightly biased. With every flip, the coin will wear down slightly, potentially altering its bias. External factors like wind or temperature will further worsen the result. Not only it is non-ergodic but also non-stationary.
+The bad news. Nothing in real life is ergodic. Not even a coin flip. All coins are slightly biased. With every flip, the coin will wear down slightly, potentially altering its bias. External factors like wind or temperature will further worsen the result. Not only is it non-ergodic but also non-stationary.
 
 ## The Non-Ergodic Bet
 
@@ -80,9 +82,9 @@ Think of the following bet. You start with 1000€ and flip a coin multiple time
 
 It may sound like a good bet. Spoiler, it is not. With statistics, we can calculate the expected value for each bet. That’s `0.5*0.8 - 0.5*0.5 = 15%`, meaning that `15%` is earned on average on each bet.
 
-After 20 bets the average would be `1000*(1 + 0.15)^20`. That’s `16 366€`, which seems like a good deal. Why not play that game?
+After 20 bets the average would be `+15%` per bet, or `1000*(1 + 0.15)^20`. That’s `16366€`, which seems like a good deal, meaning that on average the expected wealth after the 20 bets is that. Why not play that game?
 
-The problem is that we have calculated the expected wealth for the so-called ensemble. In other words, that’s what infinite players will get playing after 20 bets. You are not the ensemble. You are an individual.
+The problem is that we have calculated the expected wealth for the so-called ensemble. The ensemble average. In other words, that’s what infinite players will get playing after 20 bets. You are not the ensemble. You are an individual.
 
 This stochastic process is not ergodic, since the ensemble doesn’t match individual wealth paths. Let’s model this with Python and check that.
 
