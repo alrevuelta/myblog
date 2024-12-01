@@ -14,7 +14,7 @@ In this post, I’ll take things a step further by using a real quantum computer
 
 First and foremost, while quantum computing has made incredible progress, we’re still in the early stages. Today’s quantum computers boast a growing number of qubits, but the real challenge lies in maintaining coherence. Meaning, keeping noise under control. That’s referred to as the NISQ era (Noisy Intermediate-Scale Quantum).
 
-We can already do some basic computations with quantum computers, like factorise a number in its primes (eg `21` in `7*21`) but we are still far from factorising huge numbers like the ones that will break the elliptic curve cryptography.
+We can already do some basic computations with quantum computers, like factorise a number in its primes (eg `21` in `7*3`) but we are still far from factorising huge numbers like the ones that will break the elliptic curve cryptography.
 
 The basic principle behind is not very intuitive but simple. Quantum computing leverages the principles of quantum mechanics to process information:
 
