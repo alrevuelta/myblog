@@ -1,10 +1,8 @@
 ---
-title: Unlocking True Randomness: Using a Quantum Computer for Entropy
+title: Unlocking True Randomness. Quantum Computers for Entropy
 date: 01-12-2024
 permalink: /posts/quantum-randomness
 ---
-
-Your private key with a quantum computer
 
 Last week, I had the chance to attend a one-day course on quantum computing at [SCAYLE](https://www.scayle.es/). While it was just a high-level introduction, it gave me a solid intuition about the fascinating world of quantum mechanics and computing.
 
@@ -20,8 +18,8 @@ We can already do some basic computations with quantum computers, like factorise
 
 The basic principle behind is not very intuitive but simple. Quantum computing leverages the principles of quantum mechanics to process information:
 
-- 💻 Classical computing. Bits can take two values `0` and `1`.
-- 🌀 Quantum computing. Qubits can be both `0` or `1` with some probability.
+* 💻 Classical computing. Bits can take two values `0` and `1`.
+* 🌀 Quantum computing. Qubits can be both `0` or `1` with some probability.
 
 I think of it as a coin being flipped flying in the air. Its state is neither `0` nor `1`. It can be both. But you won’t know until the coin hits the ground. In the case of an unbiased coin both probabilities are the same.
 
@@ -108,7 +106,8 @@ We have to tweak a bit the code since none of their computers have 256 qubits. I
 
 <details>
   <summary></summary>
-```python
+ 
+  ```python
 from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
 from qiskit import transpile
 from qiskit_ibm_runtime import QiskitRuntimeService
