@@ -99,7 +99,7 @@ Let’s see how to get randomness from a real quantum computer for your key gene
 
 ## Using a Real Quantum Computer
 
-Thanks to [IBM Quantum](https://quantum.ibm.com/) we can run our previous code in a real quantum computer. IBM offers some kind of Quantum as a Service. Their quantum computer sits behind an API and the allow some free usage, 10 minutes a month. That’s enough for our program. Go to their website, register and get your API key. Replace `token` value.
+Thanks to [IBM Quantum](https://quantum.ibm.com/) we can run our previous code in a real quantum computer. IBM offers some kind of Quantum as a Service. Their quantum computer sits behind an API and they allow some free usage, 10 minutes a month. That’s enough for our program. Go to their website, register and get your API key. Replace `token` value.
 
 We have to tweak a bit the code since none of their computers have 256 qubits. Instead we use 64 qubits and measure 4 times. That’s equivalent and gives us a random number with 256 bits.
 
@@ -140,15 +140,15 @@ print(f"Ethereum Address: {eth_address}")
 ```
 </details>
 
-Lets explain what the code does:
+Let's explain what the code does:
 
 - Uses 64 qubits in superposition state. Same chance of it collapsing to a `0` or `1`. That’s what the `h` or Hadamard gate does.
-- Transpiles our code since unfortunately the target computer doesn’t support the Hadamard gate.
+- Transpiles our code since unfortunately, the target computer doesn’t support the Hadamard gate.
 - Runs the simulation 4 times. We get 64 random bits in each run.
 - We join all 64 bits into a random number of 256 bits.
 - We use that random number as a private key for the Ethereum blockchain.
 
-Quite cool, right? Your code has travelled over the Internet all over to the IBM quantum computer. A bunch of qubits have been configured with your circuit and measurements have been taken of multiple qubits sitting at -270ºC.
+Quite cool, right? Your code has been transmitted over the Internet to the IBM quantum computer. A set of qubits has been configured according to your circuit, and measurements have been taken of these qubits, which are maintained at temperatures near absolute zero (approximately 0.015 Kelvin or -273°C).
 
 Just for fun, here is the [Ethereum account](https://etherscan.io/address/0xc2122C5c9dd8e8AE17D6FC874E0Da5a6e4681587) that we have generated. Its funded with 30€ so if you can take it, all yours.
 
