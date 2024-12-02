@@ -70,7 +70,7 @@ Oversimplifying, the qubit is just a vector pointing up or down. If it points up
 
 ## Quantum Simulators
 
-Unfortunately quantum computers are not yet commodity hardware that anyone can have at home. They are rather big and have to stay at a very low temperature of around -276ºC.
+Unfortunately, quantum computers are not yet commodity hardware that anyone can have at home. They are rather big and must stay at a very low temperature near absolute zero.
 
 Luckily the Python library `qiskit` allows us to simulate the behaviour of a quantum computer in your laptop. This allows you to test and prototype before sending the code to a real quantum computer.
 
