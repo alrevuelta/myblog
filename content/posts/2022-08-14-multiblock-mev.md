@@ -289,7 +289,7 @@ Filtering all blocks proposed by these 62351 valiators, we get that the followin
 
 Here we can see the k-consecutive proposals for Coinbase during August 2022. In the first figure, we can see the frequency of `k`-consecutive proposals over time (not that slots map 1:1 to a given timestamp). In the second figure we can see the count of each `k`-consecutive proposal.
 
-![image](./img-1.png)
+![](/images/multiblock-mev-img-1.png)
 
 
 As we can see, over this month Coinbase proposed 7 blocks in a row starting in slot `4415632` and ending in `4415638`, both belonging to epoch `137988`, that started Aug-06-2022 06:43:35 PM UTC.

@@ -7,7 +7,7 @@ draft: false
 
 Euler Angles were first introduced by Leonhard Euler. According to his theorem, any rotation can be described using three angles $(\Phi, \Theta, \Psi)$ also referred as roll, pitch and yaw. They can be seen as head movements: saying "no" is the yaw, saying "yes" is the pitch, and leaning the head left or right is the roll.
 
-![](./img-1.png)
+![](/images/euler-angles-img-1.png)
 
 
 Note that the order that which the angles are represented is not important, but the order of rotation is. For this post, we will be using the $ZYX$. The following equation is a very important expression, which represents the rotation along the three axes in the $ZYX$ order. Note that for shortening purposes, $\cos(x)$ is $c(x)$ and $\sin(x)$ is $s(x)$.
@@ -47,12 +47,12 @@ $$
 
 Note that in some literature, these angles can also be referred as $\alpha, \beta, \gamma$, equivalent to $\phi, \theta, \psi$. An example of the rotation order is represented in the following figure:
 
-![](./img-2.png)
+![](/images/euler-angles-img-2.png)
 
 
 Euler angles seem to be intuitive and easy to work with. However, they have a limitation called *gimbal lock*. This singularity is the loss of one degree of freedom in a three-gimbal system. It occurs when two out of the three gimbals are aligned, and a degree of freedom is lost. An example is shown in here:
 
-![](./img-3.png)
+![](./images/euler-angles-img-3.png)
 
 
 Depending on the application, the Euler rotation convention $XYZ, ZYX, ...$ can be changed to avoid the *gimbal lock* in the typical scenarios. Using $ZYX$, the *gimbal lock* will happen when $\theta = \pi/2$. Luckily, some of the algorithms that are commonly used (DCM and Madgwick) don't work with Euler Angles, so this won't be a problem at all. Substituting the value of $\theta$ the result is:

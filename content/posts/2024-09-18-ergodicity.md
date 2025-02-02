@@ -72,7 +72,7 @@ plot_averages(time_avg, ensemble_avg, n_flips)
 With 10.000 trials we observe that both time average of a single person flipping the coin and the ensemble average of multiple people flipping a coin once match. We say it is ergodic.
 It is important to note that with just a few flips, you may not get 50:50 heads/tais. But statistics guarantee you that the more flips you do, the closer you will get to that.
 
-![](./img-1.png)
+![](/images/ergodicity-img-1.png)
 
 The bad news. Nothing in real life is ergodic. Not even a coin flip. All coins are slightly biased. With every flip, the coin will wear down slightly, potentially altering its bias. External factors like wind or temperature will further worsen the result. Not only is it non-ergodic but also non-stationary.
 
@@ -163,7 +163,7 @@ n_bets = 20
 
 As expected, the average (called ensemble average) of all players after 20 bets is `16 399` which is pretty close to the calculated number.
 
-![](./img-2.png)
+![](/images/ergodicity-img-2.png)
 
 But check the red paths. These are the wealth that individual users will get over each bet. As you can see, some end up with a wealth way higher than the average, but most of them end up worse close to bankrupt.
 
@@ -191,7 +191,7 @@ n_bets = 20
 
 This case is more of a binary situation. Lucky players get more and more wealth, but at some point, all go bust. Around `88%` of the players lose money in this simulation.
 
-![](img-3.png)
+![](/images/ergodicity-img-3.png)
 
 ```python
 Mean (€): 15606391

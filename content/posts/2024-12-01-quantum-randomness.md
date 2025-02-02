@@ -65,7 +65,7 @@ x.draw('bloch')
 plt.show()
 ```
 
-![](./qubit.png)
+![](/images/qubit.png)
 
 Oversimplifying, the qubit is just a vector pointing up or down. If it points up, it will always collapse to a `0`. But it can point anywhere and that will set the probabilities.
 
