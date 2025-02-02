@@ -1,0 +1,15 @@
+details.collapse span.close {
+    display: inline;
+}
+details.collapse span.open {
+    display: none;
+}
+
+
+details.collapse[open] span.open {
+    display: inline;
+}
+
+details.collapse[open] span.close {
+    display: none;
+}

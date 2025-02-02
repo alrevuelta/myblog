@@ -1,0 +1,17 @@
+{{ define "bespokecss" }}
+{{ partial "head/css.html" (dict "filename" "css/single.css") }}
+{{ partial "head/css.html" (dict "filename" "css/shortcodes.css") }}
+
+{{ end }}
+
+{{ define "main" }}
+<h1 class="post-title">{{ .Title }}</h1>
+{{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+<p class="post-metadata">
+Published on
+<time class="publish-date" datetime="{{ $dateMachine }}">
+  {{ .Date | time.Format "02-01-2006" }}
+</time>
+</p>
+{{ .Content }}
+{{ end }}

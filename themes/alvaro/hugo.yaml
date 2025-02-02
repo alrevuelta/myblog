@@ -1,0 +1,45 @@
+# Site information
+baseURL: https://example.org/
+languageCode: en-us
+title: My New Hugo Site
+# Website metadata
+Params:
+  description: My website description
+  author: My Name
+  email: email@example.com
+# Configuration
+theme: alvaro
+disableKinds:
+- taxonomy
+- term
+menus:
+    main:
+        - name: Posts
+          pageRef: /posts
+          weight: 10
+        - name: Series
+          pageRef: /series
+          weight: 20
+        - name: Categories
+          pageRef: /categories
+          weight: 30
+markup:
+    # Syntax highlighting
+    highlight:
+        lineNos: true
+        lineNumbersInTable: false
+        noClasses: false
+    # Latex rendering
+    goldmark:
+      extensions:
+        passthrough:
+          delimiters:
+            block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+            inline:
+            - - $
+              - $
+          enable: true

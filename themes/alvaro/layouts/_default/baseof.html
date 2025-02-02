@@ -1,0 +1,33 @@
+{{- $minHugoVersion := "0.140.0" }}
+{{- if lt hugo.Version $minHugoVersion }}
+  {{- errorf "Something requires Hugo v%s or later." $minHugoVersion }}
+{{- end }}
+
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+  {{ block "bespokecss" . }}{{ end }}
+</head>
+<body>
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+  <div class="theme_switch-container">
+    <form name="theme_switch">
+      <input type="radio" id="radio-light" name="theme_radio" value="☀️" />
+      <label class="tab" for="radio-light">Light</label>
+      <input type="radio" id="radio-dark" name="theme_radio" value="🌑" />
+      <label class="tab" for="radio-dark">Dark</label>
+      <input type="radio" id="radio-auto" name="theme_radio" value="💻" />
+      <label class="tab" for="radio-auto">Auto</label>
+    </form>
+  </div>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+</html>
