@@ -8,7 +8,7 @@
   {{ .Content }}
   </section>
 <section>
-    <h3 class="section-title">Latest Posts</h3>
+    <h2 class="section-title">Latest Posts</h2>
     {{ range first 4 site.RegularPages }}
     <article class="post-stub">
       <time class="date" datetime='{{ .Date | time.Format "2006-01-02T15:04:05-07:00" }}'>
