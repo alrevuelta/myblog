@@ -1,0 +1,45 @@
+# Site information
+baseURL: https://alvarorevuelta.com/
+languageCode: en-us
+title: Alvaro Revuelta
+# Website metadata
+Params:
+  description: Personal Blog
+  author: Alvaro Revuelta
+  email: email@example.com
+# Configuration
+theme: alvaro
+disableKinds:
+- taxonomy
+- term
+menus:
+    main:
+        - name: Posts
+          pageRef: /posts
+          weight: 10
+        - name: Library
+          pageRef: /library
+          weight: 20
+        - name: Talks
+          pageRef: /talks
+          weight: 30
+markup:
+    # Syntax highlighting
+    highlight:
+        lineNos: true
+        lineNumbersInTable: false
+        noClasses: false
+    # Latex rendering
+    goldmark:
+      extensions:
+        passthrough:
+          delimiters:
+            block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+            inline:
+            - - $
+              - $
+          enable: true

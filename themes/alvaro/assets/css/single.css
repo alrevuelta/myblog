@@ -1,0 +1,24 @@
+/* BLOG POST PAGE SPECIFIC STYLING */
+/* Post title & metadata styling */
+/*HUGO: Used in single.html*/
+
+.post-title {
+    margin-bottom: 0;
+}
+
+.post-metadata {
+    color: var(--text-color-alt);
+}
+
+/*Latex equation styling*/
+.katex-display {
+    padding: calc(var(--line-height) / 2);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+@media screen and (max-width: 720px) {
+    .katex-display .katex span.eqn-num {
+        display: none;
+    }
+}

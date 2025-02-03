@@ -1,0 +1,21 @@
+{{ define "bespokecss" }}
+{{ partial "head/css.html" (dict "filename" "css/list.css") }}
+{{ partial "head/css.html" (dict "filename" "css/home.css") }}
+{{ end }}
+
+{{ define "main" }}
+<section class="hero">
+  {{ .Content }}
+  </section>
+<section>
+    <h3 class="section-title">Latest Posts</h3>
+    {{ range first 4 site.RegularPages }}
+    <article class="post-stub">
+      <time class="date" datetime='{{ .Date | time.Format "2006-01-02T15:04:05-07:00" }}'>
+        {{ .Date | time.Format "Jan 02, 2006" }}
+      </time>
+      <span class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+    </article>
+    {{ end }}
+  </section>
+{{ end }}
