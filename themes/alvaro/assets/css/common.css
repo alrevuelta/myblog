@@ -683,12 +683,17 @@ h1 {
     font-size: 2rem;
     line-height: calc(2 * var(--line-height));
     margin-bottom: calc(var(--line-height) * 2);
-    text-transform: uppercase;
 }
 
 h2 {
-    font-size: 1rem;
-    text-transform: uppercase;
+    font-size: 1.25rem;
+    line-height: calc(1.5 * var(--line-height));
+    margin-top: calc(var(--line-height) * 1.5);
+}
+
+h6 {
+    font-weight: bold;
+    font-size: 0.75rem;
 }
 
 hr {
@@ -959,11 +964,12 @@ header {
     text-decoration: none;
     color: var(--background-color);
     background: var(--link-color);
-    > h2 {
+    > h3 {
         margin: 0;
         width: max-content;
         padding-inline: 1ch;
         background: var(--link-color);
+        text-transform: uppercase;
     }
 }
 

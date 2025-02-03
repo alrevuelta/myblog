@@ -6,6 +6,9 @@
         width: auto;
         margin: 0 auto;
     }
+    :last-child {
+        margin-bottom: 0;
+    }
 }
 
 .section-title {

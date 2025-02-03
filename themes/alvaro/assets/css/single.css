@@ -22,3 +22,28 @@
         display: none;
     }
 }
+
+/* Code block custom style */
+.highlight:has(pre) {
+    position: relative;
+    > pre {
+        position: relative;
+    }
+}
+
+.copy-code {
+    position: absolute;
+    border-radius: 0 var(--border-radius);
+    border: none;
+    top: calc(var(--line-height) * -1);
+    right: 0;
+    font-weight: bold;
+    padding: calc(var(--line-height) / 4) 1ch;
+    background: var(--text-color-alt);
+    color: var(--background-color-alt);
+}
+
+.copy-code:active {
+    background: var(--background-color-alt);
+    color: var(--text-color);
+}
