@@ -1,13 +1,8 @@
 .hero {
     margin: calc(2 * var(--line-height)) 0;
-    padding: var(--line-height) 2ch;
-    background: var(--background-color-alt);
     img {
         width: auto;
         margin: 0 auto;
-    }
-    :last-child {
-        margin-bottom: 0;
     }
 }
 
