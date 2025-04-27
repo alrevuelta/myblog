@@ -10,4 +10,5 @@ About me:
 * 🇪🇺 Proudly European. Born and raised in 🇪🇸.
 * 🇸🇪🇩🇰🇩🇪 Lived in these countries.
 * ✈️ Private Pilot License holder.
+* 🐦 Reach out to me on [Twitter](https://x.com/alrevuelta)
 
