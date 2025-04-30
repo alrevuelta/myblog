@@ -1,6 +1,6 @@
 ---
 title: Designing Critical Systems. Airplanes, Medical Devices, and Blockchains
-date: 2020-04-020T16:43:20+05:30
+date: 2025-04-20T16:43:20+05:30
 slug: critical-systems
 draft: false
 ---
