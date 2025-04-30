@@ -139,11 +139,7 @@ If you have multiple humans operating the system, have them cross-check each oth
 
 Also limit what the humans can do. The [Therac-25](https://en.wikipedia.org/wiki/Therac-25) radiation therapy device was involved in 6 documented accidents. In one:
 
-> the operator incorrectly selected X-ray mode before quickly changing to electron mode, which allowed the electron beam to be set for X-ray mode without the X-ray target being in place
-
-> Previous models had hardware interlocks to prevent such faults, but the Therac-25 had removed them, depending instead on software checks for safety. 
-
-> The high-current electron beam struck the patients with approximately 100 times the intended dose of radiation, and over a narrower area, delivering a potentially lethal dose of beta radiation.
+"...the operator incorrectly selected X-ray mode before quickly changing to electron mode, which allowed the electron beam to be set for X-ray mode without the X-ray target being in place. Previous models had hardware interlocks to prevent such faults, but the Therac-25 had removed them, depending instead on software checks for safety. The high-current electron beam struck the patients with approximately 100 times the intended dose of radiation, and over a narrower area, delivering a potentially lethal dose of beta radiation..."
 
 Assume the human will mess up. You can't be one click away from killing someone.
 
